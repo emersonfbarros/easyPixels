@@ -85,8 +85,12 @@ label {
 }
 
 #board-section { /* Requisito 6 */
+  display: block;
   text-align: center;
-  padding: 1.4em;
+  padding-bottom: 1.4em;
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 
 #pixel-board {
