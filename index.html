@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Easy Pixels</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1 id="title">EASY PIXELS</h1> <!--Requisito 1-->
+
+    <section id="color-palette">
+      <button type="button" id="button-random-color">NEW COLORS</button>
+    </section>
+
+    <section id="board-section">
+      <label for="board-size">BOARD SIZE</label>
+      <input type="number" name="Tamanho do Board" min="1" id="board-size">
+      <button type="button" id="generate-board">NEW BOARD</button>
+      <button type="button" id="clear-board">CLEAR BOARD</button>
+      <div id="pixel-board"></div> <!--Para o requisito 6-->
+    </section>
+  
+    <footer>
+      <nav>
+        <a href="https://www.linkedin.com/in/emersonfbarros/" target="_blank">
+          <img src="https://simpleicons.org/icons/linkedin.svg" alt="Visit my LinkedIn">
+        </a>
+        <a href="https://github.com/emersonfbarros" target="_blank">
+          <img src="https://simpleicons.org/icons/github.svg" alt="Visit my GitHub">
+        </a>
+      </nav>
+      <p>2023 Ⓒ Developed by Emerson Barros.</p>
+    </footer>
+  </body>
+  <script src="./script.js"></script>
+</html>
