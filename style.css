@@ -99,7 +99,6 @@ label {
 }
 
 .pixel { /* Requisito 7 */
-  border: 1px solid black;
   width: 1.9em;
   height: 1.9em;
 }
