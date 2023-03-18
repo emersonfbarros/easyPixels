@@ -112,12 +112,12 @@ label {
   height: 1.9em;
 }
 
-.pixel:active {
-  transform: scale(0.92);
+.pixel:hover {
+  transform: scale(1.1);
 }
 
-.pixel:hover {
-  border: 1px solid rgba(0, 0, 0, 0.4);
+.pixel:active {
+  transform: scale(0.90);
 }
 
 footer {
