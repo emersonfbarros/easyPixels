@@ -1,10 +1,10 @@
 // Captured element
-let dimension = 5; // Usado nos requisitos 6, 13, 14 e 15;
 const buttonColors = document.getElementById('button-random-color');
 const board = document.getElementById('pixel-board');
 const colors = []; // guardará os elementos html das 4 cores da paleta e é globalmente acessável
 const clearBtn = document.getElementById('clear-board');
 const generateBtn = document.getElementById('generate-board');
+let dimension = [5, 5]; // Used for the initial board e the posterior user board
 
 function randomColor() { // gera as cores rgb aleatoriamente
   const rdmColor = [];
@@ -56,8 +56,9 @@ function recoverColors() {
 }
 
 function restoreBoard() {
-  if (localStorage.getItem('boardSize') !== null) {
-    dimension = JSON.parse(localStorage.getItem('boardSize'));
+  if (localStorage.getItem('boardHeigth') !== null && localStorage.getItem('boardWidth') !== null) {
+    dimension[0] = JSON.parse(localStorage.getItem('boardHeigth'));
+    dimension[1] = JSON.parse(localStorage.getItem('boardWidth'));
   }
 }
 
@@ -65,8 +66,8 @@ function createBoard() {
   restoreBoard();
   const columns = [];
   let gridColums = '';
-  for (let lineIndex = 0; lineIndex < dimension; lineIndex += 1) {
-    for (let columIndex = 0; columIndex < dimension; columIndex += 1) {
+  for (let lineIndex = 0; lineIndex < dimension[0]; lineIndex += 1) {
+    for (let columIndex = 0; columIndex < dimension[1]; columIndex += 1) {
       columns[columIndex] = document.createElement('div');
       columns[columIndex].classList = 'pixel';
       columns[columIndex].style.backgroundColor = 'white';
@@ -116,21 +117,31 @@ function clearPixels() {
 }
 
 function sizeLimiter() {
-  if (dimension < 2) {
-    dimension = 2;
+  if (dimension[0] < 2) {
+    dimension[0] = 2;
   }
-  if (dimension > 50) {
-    dimension = 50;
+  if (dimension[1] < 2) {
+    dimension[1] = 2;
+  }
+  if (dimension[0] > 50) {
+    dimension[0] = 50;
+  }
+  if (dimension[1] > 50) {
+    dimension[1] = 50;
   }
 }
 
 function saveBoard() {
-  JSON.stringify(localStorage.setItem('boardSize', dimension));
+  localStorage.setItem('boardHeigth', JSON.stringify(dimension[0]));
+  localStorage.setItem('boardWidth', JSON.stringify(dimension[1]));
 }
 
 function newBoard() {
-  const sizeInput = parseInt(document.getElementById('board-size').value, 10); // Para o requisito 13
-  if (Number.isNaN(sizeInput)) {
+  //Antes era sizeInput
+  let sizeInput = [0, 0];
+  sizeInput[0] = parseInt(document.getElementById('board-width').value, 10); // Para o requisito 13
+  sizeInput[1] = parseInt(document.getElementById('board-heigth').value, 10); // Para o requisito 13
+  if (Number.isNaN(sizeInput[0]) || Number.isNaN(sizeInput[1])) {
     window.alert('Invalid Board!');
     return;
   }
