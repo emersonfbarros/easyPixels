@@ -3,32 +3,32 @@ let dimension = [5, 5];
 const board = document.getElementById('pixel-board');
 const clearBtn = document.getElementById('clear-board');
 const generateBtn = document.getElementById('generate-board');
-const brushes = document.getElementsByClassName('color');
-const initialBrushesColors = ['#000000', '#ff0000', '#00ff00', '#0000ff'];
+const pencils = document.getElementsByClassName('color');
+const initialPencilsColors = ['#000000', '#ff0000', '#00ff00', '#0000ff'];
 const pixelToColor = document.getElementsByClassName('pixel');
 const heigthInput = document.getElementById('board-heigth');
 const widthInput = document.getElementById('board-width');
 const heigthWarning = document.getElementById('heigth-warning');
 const widthWarning = document.getElementById('width-warning');
 
-function setBrushes() {
-  for (let brushIndex = 0; brushIndex < (brushes.length - 1); brushIndex += 1) {
-    brushes[brushIndex].setAttribute('value', initialBrushesColors[brushIndex]);
+function setPencils() {
+  for (let pencilsIndex = 0; pencilsIndex < (pencils.length - 1); pencilsIndex += 1) {
+    pencils[pencilsIndex].setAttribute('value', initialPencilsColors[pencilsIndex]);
   }
 }
 
-function storageColors() {
+function saveColors() {
   const savedColors = [];
   for (let storageIndex = 0; storageIndex < 4; storageIndex += 1) {
-    savedColors[storageIndex] = brushes[storageIndex].value;
+    savedColors[storageIndex] = pencils[storageIndex].value;
   }
-  localStorage.setItem('brushColors', JSON.stringify(savedColors));
+  localStorage.setItem('pencilsColors', JSON.stringify(savedColors));
 }
 
 function recoverColors() {
-  const recoveredColors = JSON.parse(localStorage.getItem('brushColors'));
+  const recoveredColors = JSON.parse(localStorage.getItem('pencilsColors'));
   for (let setIndex = 0; setIndex < 4; setIndex += 1) {
-    brushes[setIndex].setAttribute('value', recoveredColors[setIndex]);
+    pencils[setIndex].setAttribute('value', recoveredColors[setIndex]);
   }
 }
 
@@ -134,9 +134,9 @@ function wAnalyzer() {
 }
 
 function strictlyOnload() {
-  if (localStorage.getItem('brushColors') === null) {
-    setBrushes();
-    storageColors();
+  if (localStorage.getItem('pencilsColors') === null) {
+    setPencils();
+    saveColors();
   } else {
     recoverColors();
   }
@@ -148,14 +148,14 @@ function strictlyOnload() {
 }
 
 function events() {
-  brushes[brushes.length - 1].addEventListener('click', (event) => {
+  pencils[pencils.length - 1].addEventListener('click', (event) => {
     event.preventDefault();
   });
-  for (let saveIndex = 0; saveIndex < (brushes.length - 1); saveIndex += 1) {
-    brushes[saveIndex].addEventListener('input', storageColors);
+  for (let saveIndex = 0; saveIndex < (pencils.length - 1); saveIndex += 1) {
+    pencils[saveIndex].addEventListener('input', saveColors);
   }
-  for (let clickIndex = 0; clickIndex < brushes.length; clickIndex += 1) {
-    brushes[clickIndex].addEventListener('click', selectedOne);
+  for (let clickIndex = 0; clickIndex < pencils.length; clickIndex += 1) {
+    pencils[clickIndex].addEventListener('click', selectedOne);
   }
   heigthInput.addEventListener('input', hAnalyzer);
   widthInput.addEventListener('input', wAnalyzer);
