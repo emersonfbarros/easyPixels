@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Easy Pixels</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./icons/easylogo.png">
+  </head>
+  <body>
+    <header>
+      <h1 id="title">EASY PIXELS</h1>
+    </header>
+
+    <main>
+      <section id="color-palette">
+        <div class="pencils">
+          <img src="./icons/pencil.png" alt="pencil icon">
+          <input class="color selected" type="color" name="black-pencil">
+          <input class="color" type="color" name="pencil1">
+          <input class="color" type="color" name="pencil2">
+          <input class="color" type="color" name="pencil3">
+        </div>
+        <div class="eraser">
+          <img src="./icons/eraser.png" alt="eraser icon">
+          <input class="color" type="color" name="eraser" value="#FFFFFF">
+        </div>
+      </section>
+
+      <section id="board-control">
+        <div>
+          <div>
+            <button type="button" id="generate-board">NEW BOARD</button>
+          </div>
+          <div>
+            <label for="board-heigth">HEIGTH</label>
+            <input type="number" name="Tamanho do Board" min="1" id="board-heigth">
+            <p id="heigth-warning">WARNING</p>
+          </div>
+          <div>
+            <label for="board-width">WIDTH</label>
+            <input type="number" name="Tamanho do Board" min="1" id="board-width">
+            <p id="width-warning">WARNING</p>
+          </div>
+        </div>
+        <div>
+          <button type="button" id="clear-board">CLEAR BOARD</button>
+        </div>
+      </section>
+
+      <section id="drawing-board">
+        <div id="pixel-board"></div>
+      </section>
+    </main>
+  
+    <footer>
+      <nav>
+        <a href="https://www.linkedin.com/in/emersonfbarros/" target="_blank"><img src="https://simpleicons.org/icons/linkedin.svg" alt="Visit my LinkedIn"></a>
+        <a href="https://github.com/emersonfbarros" target="_blank"><img src="https://simpleicons.org/icons/github.svg" alt="Visit my GitHub"></a>
+      </nav>
+      <p>2023 Ⓒ Developed by Emerson Barros.</p>
+    </footer>
+  </body>
+  <script src="./script.js"></script>
+</html>
