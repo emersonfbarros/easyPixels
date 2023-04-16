@@ -1,0 +1,286 @@
+@font-face {
+  font-display: swap;
+  font-family: Broken Console;
+  font-style: normal;
+  font-weight: 700;
+  src: url('./font/broken-console-broken-console-bold-700.woff') format('woff');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+  background-color: rgb(48, 48, 48);
+  padding-bottom: 6rem;
+  font-family: Broken Console, sans-serif;
+  font-weight: 700;
+  color: black;
+}
+
+h1 {
+  font-size: 2.1em;
+  color: rgb(242, 98, 31);
+  text-shadow: 0.08em 0.08em rgb(119, 59, 191);
+  text-align: center;
+  margin-top: 0.32em;
+}
+
+button {
+  margin: auto;
+  background-color: rgb(105, 101, 112);
+  font-family: Broken Console, sans-serif;
+  font-weight: 700;
+  color: black;
+  padding-top: 0.5em;
+  padding-bottom: 0.2em;
+}
+
+label {
+  text-shadow: 0.08em 0.08em rgb(105, 101, 112);
+  padding: 0.4em;
+}
+
+img {
+  height: auto;
+  width: 3.1rem;
+}
+
+#color-palette {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 98%;
+  margin: 0.7rem 0.2rem;
+}
+
+.pencils , .eraser {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.17rem solid rgb(242, 98, 31);
+  box-shadow: 0.12rem 0.12rem rgb(119, 59, 191);
+  padding: 0.26rem;
+} 
+
+.pencils {
+  width: 71%;
+}
+
+.eraser {
+  width: 29%;
+}
+
+.color {
+  border: none;
+  padding: 0;
+  height: 3.2rem;
+  width: 3.1rem;
+  background-color: transparent;
+}
+
+.color:active {
+  transform: scale(0.95);
+}
+
+.color:hover {
+  filter: brightness(0.8);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.selected {
+  border: 0.16em solid rgb(242, 98, 31);
+  box-shadow: 0.12em 0.12em rgb(119, 59, 191);
+}
+
+#board-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 98%;
+  margin: auto;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border: 0.17rem solid rgb(242, 98, 31);
+  box-shadow: 0.12rem 0.12rem rgb(119, 59, 191);
+}
+
+#board-control > div:nth-child(1) {
+  display: flex;
+  margin: 0.6rem auto;
+}
+
+#board-heigth , #board-width {
+  display: inline-block;
+  width: 3.4em;
+  font-family: Broken Console, sans-serif;
+  font-weight: 700;
+  color: black;
+  background-color: rgb(105, 101, 112);
+  padding-top: 0.5em;
+  padding-bottom: 0.2em;
+}
+
+#heigth-warning , #width-warning {
+  font-size: 0.8rem;
+  text-shadow: 0.08em 0.08em rgb(105, 101, 112);
+  color: red;
+  text-align: center;
+  margin-top: 0.4rem;
+  visibility: hidden;
+}
+
+#drawing-board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pixel-board {
+  display: grid;
+  height: auto;
+  justify-content: center;
+  margin: auto;
+}
+
+.pixel {
+  aspect-ratio: 1 / 1;
+}
+
+.pixel:hover {
+  filter: brightness(0.8);
+}
+
+.pixel:active {
+  transform: scale(0.90);
+}
+
+footer {
+  display: block;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6em;
+}
+
+nav {
+  margin-top: 1em;
+}
+
+img {
+  width: 2em;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+}
+
+img:hover {
+  transform: scale(1.2);
+}
+
+footer p {
+  text-shadow: 0.09em 0.09em rgb(105, 101, 112);
+  margin: 1px;
+}
+
+@media (min-width: 412px) {
+  #drawing-board {
+    padding-top: 3rem;
+  }
+}
+
+@media (min-width: 600px) {
+  main {
+    max-width: 62%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    max-width: 80%;
+  }
+
+  header {
+    height: 3rem;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  label {
+    padding-left: 0;
+  }
+
+  #color-palette , .pencils, .eraser {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  #color-palette {
+    width: 8%;
+    margin-right: 6%;
+  }
+
+  .pencils , .eraser {
+    width: 100%;
+  }
+
+  .color {
+    margin: 2%;
+  }
+
+  #board-control {
+    order: 1;
+    justify-content: space-between;
+    width: 14%;
+    height: 36vmin;
+    margin: 0;
+    align-items: space-between;
+  }
+
+  #board-control > div:nth-child(1) > div:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10% auto 4% auto;
+  }
+
+  #board-control > div:nth-child(1) > div:nth-child(3) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 4% auto;
+  }
+
+  #board-control > div:nth-child(1) {
+    flex-direction: column;
+    width: 100%;
+    height: 68%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #drawing-board {
+    width: 64%;
+    margin: auto;
+    padding: 0;
+  }
+}

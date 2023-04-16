@@ -10,6 +10,16 @@ Simple app to make pixel
 ## What about the future?
 I have a lot of ideas to make Easy Pixels a pixel art site with more features but keep it, as the name says, easy. When I acquire more knowledge and have time I will implement things like:
 
-- Color palette where the user can choose the color he wants.
+~~- Color palette where the user can choose the color he wants.~~
+
 - Possibility to save art.
-- Tools like eraser and paint bucket.
+
+~~- Tools like eraser and paint bucket (paint bucket not yet).~~
+
+## What do we have now?
+
+- Responsive web design
+- Individual height and width control
+- And check below what is possible to do with easy pixels :pencil2:
+
+[<img src="https://i.ytimg.com/vi/R0YVHO4MRqQ/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=R0YVHO4MRqQ "Check it!")
