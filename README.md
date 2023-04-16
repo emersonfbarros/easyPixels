@@ -22,4 +22,4 @@ I have a lot of ideas to make Easy Pixels a pixel art site with more features bu
 - Individual height and width control
 - And check below what is possible to do with easy pixels :pencil2:
 
-[![Check it!](https://i.ytimg.com/vi/R0YVHO4MRqQ/maxresdefault.jpg)(https://www.youtube.com/watch?v=R0YVHO4MRqQ "Check it!")]
+[<img src="https://i.ytimg.com/vi/R0YVHO4MRqQ/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=R0YVHO4MRqQ "Check it!")
