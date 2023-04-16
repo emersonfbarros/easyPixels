@@ -19,7 +19,7 @@ body {
   min-height: 100%;
   position: relative;
   background-color: rgb(48, 48, 48);
-  padding-bottom: 5.4rem;
+  padding-bottom: 6rem;
   font-family: Broken Console, sans-serif;
   font-weight: 700;
   color: black;
@@ -173,7 +173,7 @@ footer {
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 5.6rem;
+  height: 6em;
 }
 
 nav {
@@ -195,6 +195,12 @@ footer p {
   margin: 1px;
 }
 
+@media (min-width: 412px) {
+  #drawing-board {
+    padding-top: 3rem;
+  }
+}
+
 @media (min-width: 600px) {
   main {
     max-width: 62%;
@@ -208,7 +214,6 @@ footer p {
     justify-content: space-around;
     align-items: center;
     margin: auto;
-    height: 80vmin;
     max-width: 80%;
   }
 
@@ -276,5 +281,6 @@ footer p {
   #drawing-board {
     width: 64%;
     margin: auto;
+    padding: 0;
   }
 }
